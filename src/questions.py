@@ -237,4 +237,7 @@ questions = [
 
 
 def random_question():
+    """
+    Return a random question from the list of questions above.
+    """
     return choice(questions)

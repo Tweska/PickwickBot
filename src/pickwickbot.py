@@ -19,15 +19,25 @@ conn = None
 
 
 def start(bot, update):
+    """
+    When somebody sends the command /start or clicks the start button, the bot
+    says hi!
+    """
     bot_name = bot.get_me().first_name
     update.message.reply_text('Hoi, ik ben %s!' % bot_name)
 
 
 def question(_, update):
+    """
+    When the /vraag command is received, the bot replies with a question.
+    """
     update.message.reply_text(random_question())
 
 
 def error(_, update, error):
+    """
+    Hand all errors over to the logger.
+    """
     logger.warning('Update "%s" caused error "%s"' % (update, error))
 
 
